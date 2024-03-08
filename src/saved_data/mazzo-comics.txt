@@ -1,0 +1,15 @@
+Batman, 80, Batman.jpeg
+Deadpool, 100, Deadpool.jpeg
+Flash, 45, Flash.jpeg
+Galactus, 80, Galactus.jpeg
+Goblin, 30, Goblin.jpeg
+Hulk, 55, Hulk.jpeg
+Uomo Ragno, 50, Ragno.jpeg
+Superman, 85, Superman.jpeg
+Thanos, 30, Thanos.jpeg
+Lizard, 30, Lizard.jpeg
+Wolverine, 50, Wolverine.jpeg
+Joker, 25, Joker.jpeg
+Lanterna verde, 40, Lanterna.jpeg
+Bonus, 0, Mjolnir.jpeg, Una volta messa in campo il giocatore non prenderà nulla dal tavolo ma al giocatore che prenderà tutto non gli verranno aggiunti punti
+Malus, /2, Kryptonite.jpeg, Una volta messa in campo il giocatore prenderà tutto ciò che vi è sul tavolo i punti che riceve non gli saranno sommati ma sottratti ai punti già in possesso

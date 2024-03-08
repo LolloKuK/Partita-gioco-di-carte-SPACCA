@@ -1,0 +1,15 @@
+Aloy, 35, Aloy.jpeg
+Arthur Morgan, 45, Arthur.jpeg
+Kratos, 100, Kretos.jpeg
+Godfrey, 90, Godfrey.jpeg
+Malenia, 90, Malenia.jpeg
+Maliketh, 75, Maliketh.jpeg
+Jin Sakai, 40, Jin.jpeg
+Venom, 80, Venom.jpeg
+Spiderman, 40, Spiderman.jpeg
+Miles, 40, Miles.jpeg
+Franklin, 20, Franklin.jpeg
+Trevor, 25, Trevor.jpeg
+Michael, 20, Micheal.jpeg
+Bonus, 0, Grazia.jpeg, Una volta messa in campo il giocatore non prenderà nulla dal tavolo ma al giocatore che prenderà tutto non gli verranno aggiunti punti
+Malus, /2, Piaga.jpeg, Una volta messa in campo il giocatore prenderà tutto ciò che vi è sul tavolo i punti che riceve non gli saranno sommati ma sottratti ai punti già in possesso

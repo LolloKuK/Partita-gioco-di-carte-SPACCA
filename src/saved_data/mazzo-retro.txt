@@ -1,0 +1,15 @@
+Mario, 100, Mario.jpeg
+Donkey Kong, 45, Donkey.jpeg
+Bowser, 50, Bowser.jpeg
+Yoshi, 20, Yoshi.jpeg
+Sonic, 80, Sonic.jpeg
+Silver, 60, Silver.jpeg
+Metal Sonic, 35, Metal.jpeg
+Tail, 30, Tail.jpeg
+Crash Bandicoot, 85, Crash.jpeg
+Coco Bandicoot, 25, Coco.jpeg
+Dr Neo Cortex, 40, Neo.jpeg
+Spyro, 80, Spyro.jpeg
+Ripto, 50, Ripto.jpeg
+Bonus, 0, Knuckles.jpeg, Una volta messa in campo il giocatore non prenderà nulla dal tavolo ma al giocatore che prenderà tutto non gli verranno aggiunti punti
+Malus, /2, Jr.jpeg, Una volta messa in campo il giocatore prenderà tutto ciò che vi è sul tavolo i punti che riceve non gli saranno sommati ma sottratti ai punti già in possesso

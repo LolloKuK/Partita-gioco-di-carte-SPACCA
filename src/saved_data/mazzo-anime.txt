@@ -1,0 +1,15 @@
+Eren, 45, Eren.jpeg
+Levi, 60, Levi.jpeg
+Ryuk, 80, Ryuk.jpeg
+Kira, 20, Kira.jpeg
+Luffy, 50, Luffy.jpeg
+Zoro, 50, Zoro.jpeg
+Naruto, 45, Naruto.jpeg
+Gaara, 35, Gaara.jpeg
+Vegeta, 75, Vegeta.jpeg
+Freezer, 75, Freezer.jpeg
+Goku, 100, Goku.jpeg
+Inosuke, 35, Inosuke.jpeg
+Tanjiro, 55, Tanjiro.jpeg
+Bonus, 0, Sfere.jpeg, Una volta messa in campo il giocatore non prenderà nulla dal tavolo ma al giocatore che prenderà tutto non gli verranno aggiunti punti
+Malus, /2, Bestia.jpeg, Una volta messa in campo il giocatore prenderà tutto ciò che vi è sul tavolo i punti che riceve non gli saranno sommati ma sottratti ai punti già in possesso
