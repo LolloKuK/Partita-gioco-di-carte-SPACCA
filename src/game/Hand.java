@@ -13,9 +13,10 @@ public class Hand {
 
     public int size() { return mano.size(); }
 
-    public void refillHand(Deck deck) {
+    public void refillHand(Deck mazzo) {
+        mazzo.shuffleDeck();
         for(int i = 0; i < 5; i++) {
-            mano.add(deck.getFirstCard());
+            mano.add(mazzo.getFirstCard());
             handCard++;
         }
     }

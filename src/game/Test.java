@@ -8,8 +8,8 @@ public class Test {
         Deck mazzo_sony = new Deck(sonyFile);
         String comicsFile = "mazzo-comics.txt";
         Deck mazzo_comics = new Deck(comicsFile);
-        //String animeFile = "mazzo-anime.txt";
-        //Deck mazzo_anime = new Deck(animeFile);
+        String animeFile = "mazzo-anime.txt";
+        Deck mazzo_anime = new Deck(animeFile);
         String retroFile = "mazzo-retro.txt";
         Deck mazzo_retro = new Deck(retroFile);
 
@@ -29,7 +29,8 @@ public class Test {
         // Creo 3 giocatori tipo con 3 mazzi differenti
         Player giocatore1 = new Giocatore("Fede", mazzo_comics);
         Player giocatore2 = new Giocatore("Lollo", mazzo_sony);
-        //Player giocatore3 = new Giocatore("Fra", mazzo_retro);
+        Player giocatore3 = new Giocatore("Fra", mazzo_retro);
+        Player bot = new IA("Bot 1", mazzo_anime);
 
         // Riempio la mano dei giocatori e le stampo
         /*
@@ -44,8 +45,9 @@ public class Test {
         */
 
         // Set di un tavolo da due giocatori
-        Table tavolo = new Table(giocatore1, giocatore2);
-
+        TableForTwo tavolo2 = new TableForTwo(giocatore1, giocatore2);
+        TableForThree tavolo3 = new TableForThree(giocatore1, giocatore2, giocatore3);
+        TableForFour tavolo4 = new TableForFour(giocatore1, giocatore2, giocatore3, bot);
         // turni di prova
         /*
         tavolo.addOnTable(tavolo.getFirst(), 1);
@@ -69,8 +71,8 @@ public class Test {
         tavolo.printTable();
          */
 
-
-        Game partita = new Game(tavolo);
-        partita.matchStart();
+        //tavolo2.matchStart();
+        //tavolo3.matchStart();
+        tavolo4.matchStart();
     }
 }
