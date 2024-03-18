@@ -36,11 +36,12 @@ public abstract class Table {
         for (Card card : cardOnTable) {
             roundScore += card.getValue();
         }
+        roundScore += getEffect();
         return roundScore;
     }
 
     public void setEffectList(){
-        String pathFile = "/Users/lorenzocuoco/Desktop/Cartelle/Programmazione/IntelliJ-workspace/Partita/src/saved_data/effect.txt";
+        String pathFile = "/Users/lorenzocuoco/Desktop/Cartelle/IntelliJ-workspace/Partita/src/saved_data/effect.txt";
         //da cambiare nel caso si usi su un'altro pc
         System.out.println(pathFile);
         try (BufferedReader reader = new BufferedReader(new FileReader(pathFile))) {

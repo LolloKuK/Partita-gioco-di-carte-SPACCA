@@ -43,7 +43,7 @@ public class TableForFour extends Table implements Game {
             playerOrder.set(2, playerOrder.get(3));
             playerOrder.set(3, l);
         }
-        else if (cardOnTable.get(2).getValue() > (cardOnTable.getFirst().getValue() + getEffect()) &&
+        else if (cardOnTable.get(2).getValue() > cardOnTable.getFirst().getValue() + getEffect() &&
                 cardOnTable.get(2).getValue() >= cardOnTable.get(1).getValue() &&
                 cardOnTable.get(2).getValue() >= cardOnTable.get(3).getValue()) {
 
@@ -54,7 +54,7 @@ public class TableForFour extends Table implements Game {
             playerOrder.set(0, w);
             playerOrder.set(1, l);
         }
-        else if (cardOnTable.get(3).getValue() > (cardOnTable.getFirst().getValue() + getEffect()) &&
+        else if (cardOnTable.get(3).getValue() > cardOnTable.getFirst().getValue() + getEffect() &&
                 cardOnTable.get(3).getValue() > cardOnTable.get(1).getValue() &&
                 cardOnTable.get(3).getValue() >= cardOnTable.get(2).getValue()) {
 
@@ -70,7 +70,7 @@ public class TableForFour extends Table implements Game {
         printTable();
         if (cardOnTable.getFirst().isSpecial()) {
             if (cardOnTable.getFirst().getName().equals("Malus")) {
-                playerOrder.getFirst().addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.getFirst().addPoints(roundTotalScore() / 2);
             }
             else if (cardOnTable.getFirst().getName().equals("Bonus")) {
                 whoWin();
@@ -80,7 +80,7 @@ public class TableForFour extends Table implements Game {
         else if (cardOnTable.get(1).isSpecial()) {
             if (cardOnTable.get(1).getName().equals("Malus")) {
 
-                playerOrder.get(1).addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.get(1).addPoints(roundTotalScore() / 2);
                 Player l = playerOrder.getFirst();
                 playerOrder.set(0, playerOrder.get(1));
                 playerOrder.set(1, playerOrder.get(2));
@@ -96,7 +96,7 @@ public class TableForFour extends Table implements Game {
 
             if (cardOnTable.get(2).getName().equals("Malus")) {
 
-                playerOrder.get(2).addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.get(2).addPoints(roundTotalScore() / 2);
                 Player w = playerOrder.get(2);
                 Player l = playerOrder.get(3);
                 playerOrder.set(2, playerOrder.get(0));
@@ -113,7 +113,7 @@ public class TableForFour extends Table implements Game {
 
             if (cardOnTable.get(3).getName().equals("Malus")) {
 
-                playerOrder.get(3).addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.get(3).addPoints(roundTotalScore() / 2);
                 Player w = playerOrder.get(3);
                 playerOrder.set(3, playerOrder.get(2));
                 playerOrder.set(2, playerOrder.get(1));
@@ -130,11 +130,11 @@ public class TableForFour extends Table implements Game {
                 cardOnTable.getFirst().getValue() + getEffect() >= cardOnTable.get(2).getValue() &&
                 cardOnTable.getFirst().getValue() >= cardOnTable.get(3).getValue()) {
 
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
         else {
             whoWin();
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
 
         System.out.println(getFirst().getName()+ "\t" + getFirst().getPoints());
@@ -144,19 +144,31 @@ public class TableForFour extends Table implements Game {
 
     @Override
     public void getRoundWinner() {
-        if (getFirst().getPoints() > getSecond().getPoints() && getFirst().getPoints() > getThird().getPoints() && getFirst().getPoints() > getFourth().getPoints()) {
+        if (getFirst().getPoints() > getSecond().getPoints() &&
+                getFirst().getPoints() > getThird().getPoints() &&
+                getFirst().getPoints() > getFourth().getPoints()) {
+
             getFirst().addTurnScore();
             System.out.println("Vince il round: " + getFirst().getName() + "\t" + getFirst().getTurnScore());
         }
-        else if (getSecond().getPoints() > getFirst().getPoints() && getSecond().getPoints() > getThird().getPoints() && getSecond().getPoints() > getFourth().getPoints()) {
+        else if (getSecond().getPoints() > getFirst().getPoints() &&
+                getSecond().getPoints() > getThird().getPoints() &&
+                getSecond().getPoints() > getFourth().getPoints()) {
+
             getSecond().addTurnScore();
             System.out.println("Vince il round: " + getSecond().getName() + "\t" + getSecond().getTurnScore());
         }
-        else if (getThird().getPoints() > getFirst().getPoints() && getThird().getPoints() > getSecond().getPoints() && getThird().getPoints() > getFourth().getPoints()) {
+        else if (getThird().getPoints() > getFirst().getPoints() &&
+                getThird().getPoints() > getSecond().getPoints() &&
+                getThird().getPoints() > getFourth().getPoints()) {
+
             getThird().addTurnScore();
             System.out.println("Vince il round: " + getThird().getName() + "\t" + getThird().getTurnScore());
         }
-        else if (getFourth().getPoints() > getFirst().getPoints() && getFourth().getPoints() > getSecond().getPoints() && getFourth().getPoints() > getThird().getPoints()){
+        else if (getFourth().getPoints() > getFirst().getPoints() &&
+                getFourth().getPoints() > getSecond().getPoints() &&
+                getFourth().getPoints() > getThird().getPoints()) {
+
             getFourth().addTurnScore();
             System.out.println("Vince il round: " + getFourth().getName() + "\t" + getFourth().getTurnScore());
         }
@@ -170,13 +182,22 @@ public class TableForFour extends Table implements Game {
     public Player getGameWinner() {
 
         Player winner = null;
-        if (getFirst().getTurnScore() > getSecond().getTurnScore() && getFirst().getTurnScore() > getThird().getTurnScore() && getFirst().getTurnScore() > getFourth().getTurnScore()) {
+        if (getFirst().getTurnScore() > getSecond().getTurnScore() &&
+                getFirst().getTurnScore() > getThird().getTurnScore() &&
+                getFirst().getTurnScore() > getFourth().getTurnScore()) {
+
             winner = getFirst();
         }
-        else if (getSecond().getTurnScore() > getFirst().getTurnScore() && getSecond().getTurnScore() > getThird().getTurnScore() && getSecond().getTurnScore() > getFourth().getTurnScore()) {
+        else if (getSecond().getTurnScore() > getFirst().getTurnScore() &&
+                getSecond().getTurnScore() > getThird().getTurnScore() &&
+                getSecond().getTurnScore() > getFourth().getTurnScore()) {
+
             winner = getSecond();
         }
-        else if(getThird().getTurnScore() > getFirst().getTurnScore() && getThird().getTurnScore() > getSecond().getTurnScore() && getThird().getTurnScore() > getFourth().getTurnScore()) {
+        else if(getThird().getTurnScore() > getFirst().getTurnScore() &&
+                getThird().getTurnScore() > getSecond().getTurnScore() &&
+                getThird().getTurnScore() > getFourth().getTurnScore()) {
+
             winner = getThird();
         }
         else {

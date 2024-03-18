@@ -15,7 +15,7 @@ public class Deck {
 
     public void createDeck(String nomeFile) {
 
-        String pathFile = "/Users/lorenzocuoco/Desktop/Cartelle/Programmazione/IntelliJ-workspace/Partita/src/saved_data/" + nomeFile;
+        String pathFile = "/Users/lorenzocuoco/Desktop/Cartelle/IntelliJ-workspace/Partita/src/saved_data/" + nomeFile;
         //da cambiare nel caso si usi su un'altro pc
         System.out.println(pathFile);
         try (BufferedReader reader = new BufferedReader(new FileReader(pathFile))) {

@@ -40,7 +40,7 @@ public class TableForTwo extends Table implements Game{
 
             if (cardOnTable.getFirst().getName().equals("Malus")) {
 
-                playerOrder.getFirst().addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.getFirst().addPoints(roundTotalScore() / 2);
             }
             else if (cardOnTable.getFirst().getName().equals("Bonus")) {
 
@@ -52,7 +52,7 @@ public class TableForTwo extends Table implements Game{
 
             if (cardOnTable.getLast().getName().equals("Malus")) {
 
-                playerOrder.getLast().addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.getLast().addPoints(roundTotalScore() / 2);
                 Player l = playerOrder.getFirst();
                 playerOrder.set(0, playerOrder.getLast());
                 playerOrder.set(1, l);
@@ -65,11 +65,11 @@ public class TableForTwo extends Table implements Game{
         }
         else if (cardOnTable.getFirst().getValue() + getEffect() >= cardOnTable.getLast().getValue()) {
 
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
         else {
             whoWin();
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
 
         cardOnTable.clear();

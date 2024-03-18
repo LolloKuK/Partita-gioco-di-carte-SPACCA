@@ -54,7 +54,7 @@ public class TableForThree extends Table implements Game{
 
             if (cardOnTable.getFirst().getName().equals("Malus")) {
 
-                playerOrder.getFirst().addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.getFirst().addPoints((roundTotalScore()) / 2);
             }
             else if (cardOnTable.getFirst().getName().equals("Bonus")) {
 
@@ -66,7 +66,7 @@ public class TableForThree extends Table implements Game{
 
             if (cardOnTable.get(1).getName().equals("Malus")) {
 
-                playerOrder.get(1).addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.get(1).addPoints(roundTotalScore() / 2);
                 Player loser = playerOrder.getFirst();
                 playerOrder.set(0, playerOrder.get(1));
                 playerOrder.set(1, playerOrder.get(2));
@@ -82,7 +82,7 @@ public class TableForThree extends Table implements Game{
 
             if (cardOnTable.get(2).getName().equals("Malus")) {
 
-                playerOrder.get(2).addPoints((roundTotalScore() + getEffect()) / 2);
+                playerOrder.get(2).addPoints(roundTotalScore() / 2);
                 Player loser = playerOrder.getFirst();
                 playerOrder.set(0, playerOrder.get(2));
                 playerOrder.set(2, playerOrder.get(1));
@@ -97,11 +97,11 @@ public class TableForThree extends Table implements Game{
         else if (cardOnTable.getFirst().getValue() + getEffect() >= cardOnTable.get(1).getValue() &&
                 cardOnTable.getFirst().getValue() + getEffect() >= cardOnTable.get(2).getValue()) {
 
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
         else {
             whoWin();
-            playerOrder.getFirst().addPoints(roundTotalScore() + getEffect());
+            playerOrder.getFirst().addPoints(roundTotalScore());
         }
 
         System.out.println(getFirst().getName()+ "\t" + getFirst().getPoints());
