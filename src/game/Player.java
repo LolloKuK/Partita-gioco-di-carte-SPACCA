@@ -6,7 +6,6 @@ public abstract class Player {
     public Hand mano;
     public Deck mazzo;
     public int points;
-    public int effect;
     public int turnScore;
 
     public Player(String nome, Deck mazzo) {
@@ -16,7 +15,6 @@ public abstract class Player {
         this.mano = new Hand();
 
         this.points = 0;
-        this.effect= 0;
         this.turnScore = 0;
     }
 
@@ -30,9 +28,6 @@ public abstract class Player {
 
     public void addTurnScore() { this.turnScore++; }
     public int getTurnScore() { return turnScore; }
-
-    public void addEffect(int e) { this.effect = e; }
-    public int getEffect() { return effect; }
 
     public Card playCard(int i) { return mano.getOneCard(i); }
 }

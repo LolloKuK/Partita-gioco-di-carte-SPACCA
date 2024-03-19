@@ -71,8 +71,8 @@ public class Test {
         tavolo.printTable();
          */
 
-        //tavolo2.matchStart();
+        tavolo2.matchStart();
         //tavolo3.matchStart();
-        tavolo4.matchStart();
+        //tavolo4.matchStart();
     }
 }

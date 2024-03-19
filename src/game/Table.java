@@ -12,6 +12,7 @@ public abstract class Table {
     public ArrayList<Card> cardOnTable;
     public ArrayList<Player> playerOrder;
     public ArrayList<Integer> effectList = new ArrayList<>();
+    public int effect = 0;
 
     public Table() { }
 
@@ -57,9 +58,10 @@ public abstract class Table {
         Random random = new Random();
         int i = effectList.size()-1;
         int e = random.nextInt( i + 1);
-        playerOrder.getFirst().addEffect(effectList.get(e));
+        addEffect(effectList.get(e));
     }
-    public int getEffect() { return playerOrder.getFirst().getEffect(); }
+    public void addEffect(int i) { effect += i; }
+    public int getEffect() { return effect; }
 
     public abstract void resetScores();
     public abstract void fillHand();
