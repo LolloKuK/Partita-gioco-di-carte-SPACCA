@@ -36,6 +36,7 @@ public class TableForTwo extends Table implements Game{
     }
     @Override
     public void  getTurnWinner() {
+        printTable();
         if (cardOnTable.getFirst().isSpecial()) {
 
             if (cardOnTable.getFirst().getName().equals("Malus")) {
@@ -71,7 +72,7 @@ public class TableForTwo extends Table implements Game{
             whoWin();
             playerOrder.getFirst().addPoints(roundTotalScore());
         }
-
+        System.out.println(getFirst().getName()+ "\t" + getFirst().getPoints());
         cardOnTable.clear();
         setEffect();
     }
@@ -112,6 +113,7 @@ public class TableForTwo extends Table implements Game{
         do {
             fillHand();
             for (int i = 0; i < 5; i++) {
+
                 addOnTable(getFirst(), 1);
                 addOnTable(getSecond(), 1);
                 getTurnWinner();
@@ -119,6 +121,7 @@ public class TableForTwo extends Table implements Game{
             getRoundWinner();
             System.out.println();
         } while (getGameWinner().getTurnScore() < 2);
+
         System.out.println();
         System.out.println("Fine partita. Vince: " + getGameWinner().getName() + "\t" + getGameWinner().getTurnScore());
     }
