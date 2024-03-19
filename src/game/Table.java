@@ -60,7 +60,7 @@ public abstract class Table {
         int e = random.nextInt( i + 1);
         addEffect(effectList.get(e));
     }
-    public void addEffect(int i) { effect += i; }
+    public void addEffect(int i) { effect = i; }
     public int getEffect() { return effect; }
 
     public abstract void resetScores();

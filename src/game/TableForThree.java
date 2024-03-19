@@ -72,7 +72,7 @@ public class TableForThree extends Table implements Game{
                 playerOrder.set(1, playerOrder.get(2));
                 playerOrder.set(2, loser);
             }
-            else if (cardOnTable.getLast().getName().equals("Bonus")) {
+            else if (cardOnTable.get(1).getName().equals("Bonus")) {
 
                 whoWin();
                 playerOrder.getFirst().addPoints(0);

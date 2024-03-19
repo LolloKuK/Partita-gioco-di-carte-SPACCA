@@ -33,7 +33,7 @@ public class TableForFour extends Table implements Game {
     }
 
     public void whoWin() {
-        if (cardOnTable.get(1).getValue() >= cardOnTable.getFirst().getValue() + getEffect() &&
+        if (cardOnTable.get(1).getValue() > cardOnTable.getFirst().getValue() + getEffect() &&
                 cardOnTable.get(1).getValue() >= cardOnTable.get(2).getValue() &&
                 cardOnTable.get(1).getValue() >= cardOnTable.get(3).getValue()) {
 
@@ -44,7 +44,7 @@ public class TableForFour extends Table implements Game {
             playerOrder.set(3, l);
         }
         else if (cardOnTable.get(2).getValue() > cardOnTable.getFirst().getValue() + getEffect() &&
-                cardOnTable.get(2).getValue() >= cardOnTable.get(1).getValue() &&
+                cardOnTable.get(2).getValue() > cardOnTable.get(1).getValue() &&
                 cardOnTable.get(2).getValue() >= cardOnTable.get(3).getValue()) {
 
             Player w = playerOrder.get(2);
@@ -56,7 +56,7 @@ public class TableForFour extends Table implements Game {
         }
         else if (cardOnTable.get(3).getValue() > cardOnTable.getFirst().getValue() + getEffect() &&
                 cardOnTable.get(3).getValue() > cardOnTable.get(1).getValue() &&
-                cardOnTable.get(3).getValue() >= cardOnTable.get(2).getValue()) {
+                cardOnTable.get(3).getValue() > cardOnTable.get(2).getValue()) {
 
             Player w = playerOrder.get(3);
             playerOrder.set(3, playerOrder.get(2));
@@ -87,7 +87,7 @@ public class TableForFour extends Table implements Game {
                 playerOrder.set(2, playerOrder.get(3));
                 playerOrder.set(3, l);
             }
-            else if (cardOnTable.getLast().getName().equals("Bonus")) {
+            else if (cardOnTable.get(1).getName().equals("Bonus")) {
                 whoWin();
                 playerOrder.getFirst().addPoints(0);
             }
