@@ -80,16 +80,16 @@ public class TableForTwo extends Table implements Game{
     @Override
     public void getRoundWinner() {
 
-        if (getFirst().getPoints() > getSecond().getPoints()) {
+        if (getFirst().getPoints() >= getSecond().getPoints()) {
             getFirst().addTurnScore();
             System.out.println("Vince il round: " + getFirst().getName() + "\t" + getFirst().getTurnScore());
         }
-        else if (getFirst().getPoints() == getSecond().getPoints()) {
-            System.out.println("Pareggio!");
-        }
-        else {
+        else if (getSecond().getPoints() < getFirst().getPoints()) {
             getSecond().addTurnScore();
             System.out.println("Vince il round: " + getSecond().getName() + "\t" + getSecond().getTurnScore());
+        }
+        else {
+            System.out.println("Pareggio!");
         }
         resetScores();
     }
