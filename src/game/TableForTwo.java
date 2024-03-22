@@ -84,7 +84,7 @@ public class TableForTwo extends Table implements Game{
             getFirst().addTurnScore();
             System.out.println("Vince il round: " + getFirst().getName() + "\t" + getFirst().getTurnScore());
         }
-        else if (getSecond().getPoints() < getFirst().getPoints()) {
+        else if (getSecond().getPoints() > getFirst().getPoints()) {
             getSecond().addTurnScore();
             System.out.println("Vince il round: " + getSecond().getName() + "\t" + getSecond().getTurnScore());
         }
